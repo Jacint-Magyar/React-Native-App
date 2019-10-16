@@ -8,13 +8,13 @@ import Course from '../components/Course';
 import Menu from '../components/Menu';
 import Avatar from '../components/Avatar';
 import { connect } from 'react-redux';
-const contentful = require('contentful')
+// import { createClient } from 'contentful';
 
-const client = contentful.createClient({
-  space: 'jfoz6a83t6kx',
-  environment: 'master', // defaults to 'master' if not set
-  accessToken: 'IuFLB3seCbRTRZ_HKOJO3kurSwXXxnhOMHNV0CeyEgk'
-})
+// const client = createClient({
+//   space: 'jfoz6a83t6kx',
+//   environment: 'master', // defaults to 'master' if not set
+//   accessToken: 'IuFLB3seCbRTRZ_HKOJO3kurSwXXxnhOMHNV0CeyEgk'
+// })
 
 function mapStateToProps(state) {
   return { action: state.action, name: state.name }
@@ -40,9 +40,14 @@ class HomeScreen extends Component {
   componentDidMount() {
     StatusBar.setBarStyle('dark-content', true);
 
-    client.getSpace()
-      .then((space) => console.log(space))
-      .catch(console.error)
+    // client.getSpace()
+    //   .then((space) => console.log(space))
+    //   .catch(console.error)
+
+    // client.getEntries()
+    //   .then((response) => console.log(response.items))
+    //   .catch(console.error)
+
   }
 
   componentDidUpdate() {
